@@ -1,7 +1,7 @@
 {
   "name": "winext",
   "version": "1.0.1",
-  "description": "Building server NodeJs",
+  "description": "Building load plugins server in nodejs",
   "homepage": "https://github.com/NguyenPhuocMinh/winext",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,9 @@
   "keywords": [
     "bluebird",
     "lodash",
+    "mongoose",
+    "mysql",
+    "sequelize",
     "mocha",
     "chai"
   ],
@@ -20,6 +23,7 @@
     "lodash": "^4.17.21",
     "mongoose": "^5.12.10",
     "mysql": "^2.18.1",
+    "sequelize": "^6.6.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
