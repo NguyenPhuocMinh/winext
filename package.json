@@ -1,6 +1,6 @@
 {
   "name": "winext",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Building server NodeJs",
   "homepage": "https://github.com/NguyenPhuocMinh/winext",
   "main": "index.js",
