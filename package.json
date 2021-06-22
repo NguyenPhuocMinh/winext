@@ -11,7 +11,7 @@
     "bluebird",
     "lodash",
     "mongoose",
-    "mysql",
+    "mysql2",
     "sequelize",
     "mocha",
     "chai"
@@ -22,7 +22,6 @@
     "bluebird": "^3.7.2",
     "lodash": "^4.17.21",
     "mongoose": "^5.12.10",
-    "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2",
     "uuid": "^8.3.2"
