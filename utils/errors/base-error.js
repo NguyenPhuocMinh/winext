@@ -1,9 +1,11 @@
 'use strict';
 
 class BaseError extends Error {
-  constructor(message) {
-    super(message);
+  constructor(error) {
+    super(error);
     this.name = 'WinNextBaseError';
+    this.message = error.message;
+    this.stack = error.stack;
   }
 }
 
