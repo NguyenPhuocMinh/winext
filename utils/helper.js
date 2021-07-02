@@ -10,16 +10,15 @@ function _loadModule(moduleName) {
   } catch (error) {
     throw new errors.NotFoundModuleError(error);
   }
-};
+}
 
 const _requestId = uuid.v4(null, buffer.alloc(16))
   .toString('base64')
   .replace(/\//g, '_')
   .replace(/\+/g, '-')
   .substring(0, 22);
-;
 
 module.exports = {
   loadModule: _loadModule,
-  requestId : _requestId
+  requestId: _requestId
 };

@@ -7,6 +7,6 @@ class NotFoundModuleError extends BaseError {
     super(error);
     this.name = 'NotFoundModuleError';
   }
-};
+}
 
 module.exports = NotFoundModuleError;
