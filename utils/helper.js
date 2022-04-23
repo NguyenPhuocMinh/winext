@@ -8,11 +8,13 @@ function _loadModule(moduleName) {
   try {
     return require(moduleName);
   } catch (error) {
+    console.error('LoadModule Error', error);
     throw new errors.NotFoundModuleError(error);
   }
 }
 
-const _requestId = uuid.v4(null, buffer.alloc(16))
+const _requestId = uuid
+  .v4(null, buffer.alloc(16))
   .toString('base64')
   .replace(/\//g, '_')
   .replace(/\+/g, '-')
