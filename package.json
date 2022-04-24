@@ -14,11 +14,15 @@
     "mysql2",
     "sequelize",
     "mocha",
-    "chai"
+    "chai",
+    "slugify",
+    "graphql",
+    "ajv"
   ],
   "author": "Minh Nguyễn",
   "license": "ISC",
   "dependencies": {
+    "ajv": "^8.11.0",
     "bluebird": "^3.7.2",
     "dotenv": "^10.0.0",
     "graphql": "^16.3.0",
@@ -28,6 +32,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2",
+    "slugify": "^1.6.5",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
