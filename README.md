@@ -2,4 +2,4 @@
 
 ### Follow architecture
 
-![Follow architecture](images/follow.jpeg)
+![Follow architecture](images/follow.png)
