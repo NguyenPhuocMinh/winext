@@ -2,6 +2,7 @@
 
 const buffer = require('buffer').Buffer;
 const uuid = require('uuid');
+const slugify = require('slugify');
 const errors = require('./errors');
 
 function _loadModule(moduleName) {
@@ -13,7 +14,7 @@ function _loadModule(moduleName) {
   }
 }
 
-const ATTRIBUTE_NAME = 'requestID';
+const ATTRIBUTE_KEY = 'requestID';
 
 const _generateRequestID = (_request) => {
   return uuid.v4(null, buffer.alloc(16)).toString('base64').replace(/\//g, '_').replace(/\+/g, '-').substring(0, 22);
@@ -35,14 +36,25 @@ function _loadRequestId({ generator = _generateRequestID, headerName = 'X-Reques
       response.set(headerName, requestID);
     }
 
-    request[ATTRIBUTE_NAME] = requestID;
+    request[ATTRIBUTE_KEY] = requestID;
 
     next();
   };
 }
 
+/**
+ * Parse slugify
+ * @param {String} data
+ * @param {Object} options
+ * @see https://www.npmjs.com/package/slugify
+ */
+function _parseSlug(data = '', options = { lower: true }) {
+  return slugify(data, options);
+}
+
 module.exports = {
   loadModule: _loadModule,
   loadRequestId: _loadRequestId,
-  generateRequestID: _generateRequestID
+  generateRequestID: _generateRequestID,
+  parseSlug: _parseSlug
 };
