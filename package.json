@@ -17,7 +17,8 @@
     "chai",
     "slugify",
     "graphql",
-    "ajv"
+    "ajv",
+    "node-fetch"
   ],
   "author": "Minh Nguyễn",
   "license": "ISC",
@@ -31,6 +32,7 @@
     "mongoose": "^6.3.2",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
+    "node-fetch": "^3.2.4",
     "sequelize": "^6.19.0",
     "slugify": "^1.6.5",
     "uuid": "^8.3.2"
