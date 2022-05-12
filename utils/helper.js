@@ -14,32 +14,24 @@ function _loadModule(moduleName) {
   }
 }
 
-const ATTRIBUTE_KEY = 'requestID';
-
 const _generateRequestID = (_request) => {
   return uuid.v4(null, buffer.alloc(16)).toString('base64').replace(/\//g, '_').replace(/\+/g, '-').substring(0, 22);
 };
 
 /**
  * For apply middleware
- * @param {Function} generator
- * @param {String} headerName
- * @param {Boolean} setHeader
  * @see winext-runserver
  */
-function _loadRequestId({ generator = _generateRequestID, headerName = 'X-Request-Id', setHeader = true }) {
-  return function (request, response, next) {
-    const oldRequestID = request.get(headerName);
-    const requestID = oldRequestID === undefined ? generator(request) : oldRequestID;
+function _loadRequestId(request, response, next) {
+  const generator = _generateRequestID;
+  const headerName = 'X-Request-Id';
 
-    if (setHeader) {
-      response.set(headerName, requestID);
-    }
+  const oldRequestID = request.get(headerName);
+  const requestID = oldRequestID === undefined ? generator(request) : oldRequestID;
 
-    request[ATTRIBUTE_KEY] = requestID;
+  response.set(headerName, requestID);
 
-    next();
-  };
+  return next();
 }
 
 /**
