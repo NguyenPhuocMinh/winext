@@ -5,6 +5,8 @@ const uuid = require('uuid');
 const slugify = require('slugify');
 const errors = require('./errors');
 
+const ATTRIBUTE_KEY = 'requestID';
+
 function _loadModule(moduleName) {
   try {
     return require(moduleName);
@@ -30,6 +32,7 @@ function _loadRequestId(request, response, next) {
   const requestID = oldRequestID === undefined ? generator(request) : oldRequestID;
 
   response.set(headerName, requestID);
+  request[ATTRIBUTE_KEY] = requestID;
 
   return next();
 }
