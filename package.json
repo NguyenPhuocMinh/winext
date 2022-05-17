@@ -19,7 +19,8 @@
     "graphql",
     "ajv",
     "node-fetch",
-    "bcryptjs"
+    "bcryptjs",
+    "jsonwebtoken"
   ],
   "author": "Minh Nguyễn",
   "license": "ISC",
@@ -30,6 +31,7 @@
     "dotenv": "^10.0.0",
     "graphql": "^16.3.0",
     "ip": "^1.1.5",
+    "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "mongoose": "^6.3.2",
     "mysql": "^2.18.1",
