@@ -9,7 +9,7 @@ const generateRequestID = () => {
   return uuid.v4(null, buffer.alloc(16)).toString('base64').replace(/\//g, '_').replace(/\+/g, '-').substring(0, 22);
 };
 
-uuidUtils._generateRequestID = generateRequestID;
+uuidUtils.generateRequestID = generateRequestID;
 uuidUtils.v1 = uuid.v1();
 uuidUtils.v4 = uuid.v4();
 
